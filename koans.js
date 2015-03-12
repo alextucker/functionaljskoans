@@ -116,7 +116,7 @@ describe("Closures", function(){
             var salutation = __;
 
             function helloizer(name) {
-                return;
+                return __;
             };
 
             return helloizer;
@@ -124,6 +124,48 @@ describe("Closures", function(){
 
         var result = foo("James");
         expect(result).toEqual("Goodnight James");
+    });
+});
+
+describe("Higher order functions", function(){
+    xit("can map", function(){
+        var numbers = [1,2,3];
+
+        var result = _.map(numbers, function(number){
+            return __;
+        });
+
+        expect(result).toEqual([2,3,4]);
+    });
+
+    xit("can reduce", function(){
+        var numbers = [1,2,3];
+
+        var result = _.reduce(numbers, function(memo, number){
+            return memo - number;
+        });
+
+        expect(result).toEqual(-4);
+    });
+
+    xit("can reduce w/ initial memo", function(){
+        var numbers = [1,2,3];
+
+        var result = _.reduce(numbers, function(memo, number){
+            return __;
+        }, __);
+
+        expect(result).toEqual(6);
+    });
+
+    xit("can filter", function(){
+        var numbers = [1,2,3];
+
+        var result = _.filter(numbers, function(number){
+            return __;
+        });
+
+        expect(result).toEqual([2]);
     });
 });
 
