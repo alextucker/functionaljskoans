@@ -68,6 +68,65 @@ describe("Simple Functions", function(){
     });
 });
 
+describe("Closures", function(){
+    xit("functions can have local functions", function(){
+        var foo = function(x){
+            function increment(value, incrementBy) {
+                return 0;
+            };
+
+            return increment(x, __);
+        };
+
+        var result = foo(1);
+        expect(result).toEqual(4);
+    });
+
+    xit("functions can dispath to other functions", function(){
+        var greeter = function(type){
+            var salutations = {
+                "hello" : function(name) {return "Hello " + name},
+                "goodbye" : function(name) {return "Goodbye " + name},
+            };
+
+            return;
+        };
+
+        var helloizer = greeter(__);
+        var result = helloizer("Kirk");
+        expect(result).toEqual("Hello Kirk");
+    });
+
+    xit("functions can return functions", function(){
+        var foo = function(){
+            function helloizer(name) {
+                return "Goodbye";
+            };
+
+            return helloizer;
+        }
+
+        var result = foo("Kirk");
+        expect(result).toEqual("Hello Kirk");
+    });
+
+    xit("functions can return functions with scope", function(){
+        var foo = function(salutation){
+
+            var salutation = __;
+
+            function helloizer(name) {
+                return;
+            };
+
+            return helloizer;
+        }("Goodnight");
+
+        var result = foo("James");
+        expect(result).toEqual("Goodnight James");
+    });
+});
+
 
 var __ = undefined;
 var _ = require('lodash');
