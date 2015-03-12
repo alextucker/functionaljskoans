@@ -1,0 +1,10 @@
+{
+  "name": "backtobasics",
+  "version": "0.0.0",
+  "description": "",
+  "author": "",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "lodash": "~3.5.0"
+  }
+}
