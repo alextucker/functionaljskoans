@@ -11,7 +11,7 @@ describe("Jasmine Tests", function(){
 
         // 3. Assert that the 'sut' is what you expect
         // Fill in the '__' with the value you expect
-        expect(sut).toBe(__);
+        expect(sut).toEqual(__);
     });
 });
 
@@ -169,6 +169,41 @@ describe("Higher order functions", function(){
     });
 });
 
+describe("Higher order functions with closures", function(){
+    xit("can map", function(){
+        var numbers = [1,2,3];
+
+        var incrementBy = function(inc) {
+
+            function increment(item) {
+                return;
+            };
+
+            return increment;
+        };
+
+        var result = _.map(numbers, __);
+
+        expect(result).toEqual([3,4,5]);
+    });
+
+    xit("can filter", function(){
+        var names = ["James", "Kirk", "Alex", "Ziltoid"];
+
+        var contains = function(char) {
+
+            function stringContains(item) {
+                return __;
+            }
+
+            return stringContains;
+        };
+
+        var result = _.filter(names, contains(__));
+
+        expect(result).toEqual((['James', 'Alex']));
+    });
+});
 
 var __ = undefined;
 var _ = require('lodash');
